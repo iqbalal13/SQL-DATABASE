@@ -1,0 +1,2 @@
+ALTER TABLE transaksi
+AUTO_INCREMENT = 1000;
