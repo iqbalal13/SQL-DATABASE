@@ -11,11 +11,9 @@ db_config = {
 try:
     # Create a connection to the MySQL database
     connection = mysql.connector.connect(**db_config)
-
-    # Create a cursor to interact with the database
     cursor = connection.cursor()
 
-    # Example query to create a table
+    # Create a table if it doesn't exist
     create_table_query = """
     CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -23,15 +21,20 @@ try:
         email VARCHAR(255) NOT NULL
     )
     """
-
     cursor.execute(create_table_query)
-
-    # Commit changes if making modifications to the database
     connection.commit()
 
-    # Close the cursor and the database connection
-    cursor.close()
-    connection.close()
+    # Retrieve data from the table
+    select_query = "SELECT * FROM users"
+    cursor.execute(select_query)
+    users = cursor.fetchall()
+    for user in users:
+        print(user)
 
 except mysql.connector.Error as error:
     print("Error:", error)
+
+finally:
+    if connection.is_connected():
+        cursor.close()
+        connection.close()
