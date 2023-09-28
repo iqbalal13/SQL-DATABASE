@@ -11,4 +11,4 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
-mycursor.execute("CREATE TABLE Person (name VARCHAR(50), age int)" )
+mycursor.execute("CREATE TABLE Person (name VARCHAR(50), age smallint)" )
