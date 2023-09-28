@@ -4,7 +4,8 @@ db = mysql.connector.connect(
 
     host="localhost",
     user="root",
-    passwd="iqbal"
+    passwd="iqbal",
+    database="testdatabase"
 
 )
 
