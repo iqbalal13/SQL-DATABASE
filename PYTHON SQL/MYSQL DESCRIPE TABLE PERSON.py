@@ -10,8 +10,8 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
-#mycursor.execute("CREATE TABLE Person(name VARCHAR(50), age smallint UNSIGNED, personID int PRIMARY KEY AUTO_INCREMENT)")
-mycursor.execute("DESCRIBEperson")
+
+mycursor.execute("DESCRIBE person")
 
 for  x in mycursor:
  print(x)
