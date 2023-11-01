@@ -1,2 +1,0 @@
-ALTER TABLE produk
-ALTER harga SET DEFAULT 0;
