@@ -1,0 +1,5 @@
+ALTER TABLE minuman
+MODIFY harga DECIMAL(4,2) NOT NULL;
+
+SELECT * FROM minuman;
+
