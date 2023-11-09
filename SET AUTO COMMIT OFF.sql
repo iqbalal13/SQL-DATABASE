@@ -1,7 +1,0 @@
-SET AUTOCOMMIT = OFF;
-
-
-
-
-
-
